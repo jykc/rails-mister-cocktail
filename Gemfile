@@ -53,3 +53,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 ruby '2.3.4'
+gem 'simple_form'
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+gem 'autoprefixer-rails'
+gem 'figaro'
