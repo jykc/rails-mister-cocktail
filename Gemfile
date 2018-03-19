@@ -52,9 +52,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-ruby '2.3.4'
+ruby '2.4.1'
 gem 'simple_form'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'autoprefixer-rails'
 gem 'figaro'
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'

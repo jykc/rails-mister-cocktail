@@ -1,18 +1,23 @@
-<h1>Our Cocktails</h1>
-<table>
-  <thead>
-  </thead>
 
-  <tbody>
-    <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail %></td>
-        <td><%= link_to 'Edit', edit_cocktail_path(cocktail) %></td>
-        <td><%= link_to 'Delete', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'Add a new cocktail', new_cocktail_path %>
+<div class="container">
+  <div class="heading-container">
+    <h1>Our Cocktails</h1>
+    <%= link_to 'Add a New Cocktail', new_cocktail_path, class: "btn btn-medium btn-add" %>
+  </div>
+  <div class="row">
+  <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+    <%= link_to cocktail do %>
+      <div class="card"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+        url('<%= cl_image_path cocktail.photo, height: 400, width: 400, crop: :pad %>')">
+          <div class="card-description">
+            <h2><%= cocktail.name %></h2>
+          </div>
+      </div>
+      <% end %>
+      <p><%= link_to 'View', cocktail, class: "card-show-etc" %> | <%= link_to 'Edit', edit_cocktail_path(cocktail), class: "card-show-etc" %> | <%= link_to 'Delete', cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-show-etc"%></p>
+    </div>
+  <% end %>
+  </div>
+</div>
